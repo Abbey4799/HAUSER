@@ -36,6 +36,12 @@ First, we finetune a pre-trained sequence-to-sequence model, BART, based on the 
 Then, we generate five simile candidates for 2500 literal sentences in the test set.
 The data is in `HAUSER/data/simile_candidates_raw.json`.
 
+Three annotators labeled 150 data samples, which can be found in `HAUSER/data/human_annotated.csv`. The annotations follow this format:
+- `label1`, `label2`, `label3`: represent annotations from the three annotators
+- Dimension suffixes:
+  - `_q`: quality score
+  - `_c`: creativity score
+  - `_i`: informativeness score
 
 ### Metric
 
@@ -46,6 +52,7 @@ cd HAUSER
 python code/score.py
 ```
 
+You can reimplement the correlation analysis in `code/calculate_correlation.py`.
 
 ## Citation
 ```
